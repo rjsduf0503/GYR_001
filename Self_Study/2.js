@@ -93,6 +93,15 @@ function modifyList(){ //수정
 function deleteList(){ //삭제
     var body = document.getElementById('listBody');
     var checkBox = document.querySelectorAll('#listBody .btn-chk');
+    var flag = 0;
+    for(var i in checkBox){
+        if(checkBox[i].checked) flag++;
+    }
+    if(flag==0) {
+        alert("Please Select A CheckBox At Least");
+        return false;
+    }
+
     //요소 모두 선택
     for(var i in checkBox){
         if(checkBox[i].nodeType == 1 && checkBox[i].checked == true){
