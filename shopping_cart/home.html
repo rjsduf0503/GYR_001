@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./style.css">
+    <title>장바구니</title>
+  </head>
+  <body>
+    <hr>
+    <div id="cartBorder">
+      <button type="button" name="btn_cart" id="btn_cart"><i class="material-icons" id="cart">shopping_cart</i></button>
+    </div>
+    <hr>
+    <br><br>
+
+    <div id="myModal">
+      <p id="modalHead">상품 장바구니 등록</p>
+      <div id="modalContent">
+        상품 이미지 : <input type="file" id="imageOfProduct" name="imageOfProduct"><br>
+        상품 이름 : <input type="text" id="nameOfProduct" name="nameOfProduct"><br>
+        상품 가격 : <input type="text" id="priceOfProduct" name="priceOfProduct" size="10"><br>
+        상품 개수 : <input type="text" id="numberOfProduct" name="numberOfProduct" size="5"> 최대 50개 이하까지 선택 가능 <br>
+        배송 방법 : <input type="radio" id="normalDelevery" name="methodOfDelivery">일반 배송
+                    <input type="radio" id="dawnDelevery" name="methodOfDelivery">새벽 배송 <br><br>
+                    <input type="button" id="add_btn_toCart" name="add_btn_toCart" value="장바구니 담기">
+                    <input type="button" id="cancel_btn_shopping" name="cancel_btn_shopping" value="취소">
+      </div>
+    </div>
+
+    <p>
+      일반배송 :
+      <input type="checkbox" id="sel_all_btn_normalDelivery" name="sel_all_btn_normalDelivery" value="전체 선택">전체 선택
+      <input type="button" id="del_normalDelivery" name="del_normalDelivery" value="선택 삭제">
+      <input type="button" id="move_btn_toDawnDelivery" name="move_btn_toDawnDelivery" value="새벽 배송으로 이동">
+    </p>
+
+    <table>
+      <thead>
+        <tr class="bold">
+          <td>선택</td>
+          <td>상품 이미지</td>
+          <td>상품 이름</td>
+          <td>상품 개별 가격</td>
+          <td>상품 개수</td>
+          <td>상품 구매 가격</td>
+        </tr>
+      </thead>
+      <tbody id="list_normalDelivery">
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="bold" colspan="5">총 가격</td>
+          <td id="totalPrice_normalDelivery">0</td>
+        </tr>
+      </tfoot>
+    </table>
+    <br><br>
+
+    <p>
+      새벽배송 :
+      <input type="checkbox" id="sel_all_btn_dawnDelivery" name="sel_all_btn_dawnDelivery" value="전체 선택">전체 선택
+      <input type="button" id="del_dawnDelivery" name="del_dawnDelivery" value="선택 삭제">
+      <input type="button" id="move_btn_toNormalDelivery" name="move_btn_toNormalDelivery" value="일반 배송으로 이동">
+    </p>
+
+    <table>
+      <thead>
+        <tr class="bold">
+          <td>선택</td>
+          <td>상품 이미지</td>
+          <td>상품 이름</td>
+          <td>상품 개별 가격</td>
+          <td>상품 개수</td>
+          <td>상품 구매 가격</td>
+        </tr>
+      </thead>
+      <tbody id="list_dawnDelivery">
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="bold" colspan="5">총 가격</td>
+          <td id="totalPrice_dawnDelivery">0</td>
+        </tr>
+      </tfoot>
+    </table>
+    <br><br>
+
+    <p>
+      상품 이름 :
+      <input type="text" id="input_productName" name="input_productName" value=""><br>
+      가격 범위 :
+      <input type="text" id="input_productPrice1" name="input_productPrice1" value=""> ~
+      <input type="text" id="input_productPrice2" name="input_productPrice2" value="">
+    </p>
+
+    <input type="button" id="search_btn" name="search_btn" value="검색"> <input type="button" id="change_btn" name="change_btn" value="원래 색으로 바꾸기">
+    <script src="./script.js"></script>
+  </body>
+</html>
